@@ -1,0 +1,9 @@
+services:
+  - name: flask-yolov5-app
+    type: web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app -b 0.0.0.0:$PORT
+    envVars:
+      - key: PORT
+        value: 5000
