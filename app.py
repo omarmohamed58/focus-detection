@@ -91,7 +91,8 @@ def reset_predictions():
     all_predictions = []
     return jsonify({"message": "Predictions reset successfully"}), 200
 
+
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
